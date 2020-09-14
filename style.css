@@ -1,0 +1,17 @@
+body,html{
+	margin:0;
+	height:100%;
+}
+body {
+	display: flex;
+}
+table {
+	border-collapse: collapse;
+	margin: auto;
+
+}
+td {
+	border: 6px solid black;
+	width: 150px;
+	height: 150px;
+}
