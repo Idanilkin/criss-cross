@@ -1,4 +1,7 @@
 "use strict";
+let layer = document.querySelector(".layer");
+let winner = document.querySelector(".modal p span");
+let modal = document.querySelector(".modal");
 let buttons = document.querySelector("table");
 let step_count = 1;
 let all_td = document.querySelectorAll("td");
@@ -40,9 +43,15 @@ function check() {
 		if (all_td[win_combination[i][0]].innerHTML != "" &&
 			all_td[win_combination[i][0]].innerHTML == all_td[win_combination[i][1]].innerHTML &&
 			all_td[win_combination[i][0]].innerHTML == all_td[win_combination[i][2]].innerHTML) {
-			alert("Победа!");
+			if (all_td[win_combination[i][0]].innerHTML =="O"){
+				winner.innerHTML = "Нолики";
+			} else{
+				winner.innerHTML = "Крестики";
+			}
+			layer.style.display = "block";
+			modal.style.display = "block";
 		}
-
+    
 	}
 
 }
