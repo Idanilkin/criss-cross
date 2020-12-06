@@ -1,4 +1,5 @@
 "use strict";
+let text = document.querySelector(".modal p")
 let layer = document.querySelector(".layer");
 let winner = document.querySelector(".modal p span");
 let modal = document.querySelector(".modal");
@@ -44,14 +45,20 @@ function check() {
 			all_td[win_combination[i][0]].innerHTML == all_td[win_combination[i][1]].innerHTML &&
 			all_td[win_combination[i][0]].innerHTML == all_td[win_combination[i][2]].innerHTML) {
 			if (all_td[win_combination[i][0]].innerHTML =="O"){
-				winner.innerHTML = "Нолики";
+				text.innerHTML = "Победили <span>Нолики</span>";
 			} else{
-				winner.innerHTML = "Крестики";
+				text.innerHTML = "Победили <span>Крестики</span>";
 			}
 			layer.style.display = "block";
 			modal.style.display = "block";
+			return;
 		}
+
     
 	}
-
+	if(step_count == 10){
+		text.innerHTML = "Ничья";
+		layer.style.display = "block";
+		modal.style.display = "block";
+	}
 }
