@@ -5,6 +5,7 @@ let winner = document.querySelector(".modal p span");
 let modal = document.querySelector(".modal");
 let buttons = document.querySelector("table");
 let step_count = 1;
+let new_game = document.querySelector(".new_game_button");
 let all_td = document.querySelectorAll("td");
 let win_combination = [
 	[0, 1, 2],
@@ -60,5 +61,14 @@ function check() {
 		text.innerHTML = "Ничья";
 		layer.style.display = "block";
 		modal.style.display = "block";
+	}
+
+}
+new_game.onclick = function(){
+	step_count = 1;
+	layer.style.display = "none";
+	modal.style.display = "none";
+	for(let i = 0; i < all_td.length; i++){
+		all_td[i].innerHTML = "";
 	}
 }
